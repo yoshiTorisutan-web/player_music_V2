@@ -1,6 +1,7 @@
 <!-- PROJECT LOGO --> 
 <h1 align="center">Mini Player</h1> <div align="center"> <img src="favicon.png" alt="Logo" width="100" height="100"> </div> 
 
+
 <!-- Présentation du projet -->
 # 🎧 Présentation du projet
 Mini Player est une application web simple et élégante permettant d’écouter différentes pistes audio via une interface minimaliste.
