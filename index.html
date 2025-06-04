@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mini Player</title>
+    <link rel="icon" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="bg-[#F9FAFB] text-[#111827] font-sans min-h-screen flex flex-col items-center justify-center px-4"
+  >
+    <div class="w-full max-w-md p-4">
+      <h1 class="text-3xl font-bold mb-12 text-center text-[#111827]">
+        🎵 Mini Player
+      </h1>
+
+      <!-- Menu déroulant -->
+      <div class="mb-6">
+        <label for="trackSelect" class="block text-sm mb-2"
+          >Choisissez une musique :</label
+        >
+        <select
+          id="trackSelect"
+          class="w-full p-2 bg-[#E5E7EB] text-[#111827] rounded shadow-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="0">Vexento - Digital Hug</option>
+          <option value="1">Audio Hertz - Locked Out</option>
+          <option value="2">Density & Time - Final Step</option>
+          <option value="3">Aakash Gandhi - Mirage</option>
+          <option value="4">The Mini Vandals - Elevate</option>
+        </select>
+      </div>
+
+      <!-- Lecteur audio -->
+      <div
+        id="player"
+        class="p-6 bg-[#E5E7EB] rounded-2xl shadow-md flex flex-col space-y-6 items-center"
+      >
+        <img
+          id="trackImage"
+          src="https://via.placeholder.com/120"
+          alt="cover"
+          class="w-28 h-28 rounded-xl object-cover shadow-md bg-[#374151]"
+        />
+        <p
+          id="currentTrack"
+          class="font-semibold text-center text-lg px-2 text-[#111827]"
+        >
+          Sélectionnez une chanson
+        </p>
+        <div class="flex items-center space-x-4">
+          <button
+            id="backward"
+            class="text-white text-xl p-3 rounded-full bg-[#374151] hover:bg-[#1F2937] transition"
+          >
+            ⏮️
+          </button>
+          <button
+            id="playPause"
+            class="text-white text-2xl p-4 rounded-full bg-[#374151] hover:bg-[#1F2937] transition"
+          >
+            ▶️
+          </button>
+          <button
+            id="forward"
+            class="text-white text-xl p-3 rounded-full bg-[#374151] hover:bg-[#1F2937] transition"
+          >
+            ⏭️
+          </button>
+        </div>
+        <div class="w-full">
+          <label
+            for="volume"
+            class="block text-xs font-medium mb-1 text-[#374151]"
+            >Volume</label
+          >
+          <input
+            id="volume"
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value="0.5"
+            class="w-full accent-[#2563EB]"
+          />
+        </div>
+        <div class="w-full h-2 bg-gray-300 rounded-full overflow-hidden">
+          <div
+            id="progressBar"
+            class="h-full bg-[#2563EB]"
+            style="width: 0%"
+          ></div>
+        </div>
+      </div>
+
+      <audio id="audio"></audio>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
